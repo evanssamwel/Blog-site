@@ -1,9 +1,6 @@
 #!/bin/bash
 
-# Make sure you're in the root of your Git repository
-REPO_DIR=$(pwd)
-
-# Find all files (excluding .git directory)
+# Loop through all files, including files in subfolders
 FILES=$(find . -type f ! -path "./.git/*")
 
 for FILE in $FILES; do
@@ -12,5 +9,5 @@ for FILE in $FILES; do
   echo "Committed: $FILE"
 done
 
-# Push all commits to remote
+# Push all commits
 git push origin main
